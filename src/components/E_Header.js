@@ -4,6 +4,9 @@ import {
   } from "react-router-dom";
 
 export default function E_Header() {
+  function Logout(){
+    window.location.href=window.location.href;
+  }
   return (
       <>
     
@@ -20,7 +23,7 @@ export default function E_Header() {
         <Link className="nav-link" style={{color:"white"}} to="/NewLeave" >New Leave</Link>
         </li>
         <li className="nav-item">
-        <Link className="nav-link" style={{color:"white"}} to="/Logout" >Logout</Link>
+        <Link className="nav-link" onClick={Logout} style={{color:"white"}}  >Logout</Link>
         </li>
        
       </ul>

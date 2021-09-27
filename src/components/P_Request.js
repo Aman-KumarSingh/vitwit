@@ -1,4 +1,4 @@
-import React,{ Component, useEffect } from 'react';
+import React,{  useEffect } from 'react';
 import { useState } from 'react';
 function P_Request(){
 
@@ -29,6 +29,7 @@ const editItem =(id)=>{
             )
         }
     });
+    alert("Leave approved successfully");
 }
 useEffect(()=>{
     localStorage.setItem('leave',JSON.stringify(leave))

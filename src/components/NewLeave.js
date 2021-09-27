@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import { useState } from 'react';
 
 const getLocalItems=()=>{
@@ -25,6 +25,7 @@ function NewLeave(props) {
             const newLeave={id:id,user:user,Idate:iDate,Fdate:fDate,Subject:subject,Message:message,Approval:approval};
           
                 setLeave([... leave, newLeave]);
+                alert("Leave applied successfully");
         }
         
         useEffect(()=>{
@@ -43,16 +44,16 @@ function NewLeave(props) {
                         
                         <h6>To</h6>
                         <span>End date: </span>
-                        <input type="date" class="datepicker" data-date-format="mm/dd/yyyy" value={fDate} onChange={(e)=>setFDate(e.target.value)}/>
+                        <input type="date" class="datepicker" data-date-format="mm/dd/yyyy" value={fDate} onChange={(e)=>setFDate(e.target.value)} autoComplete="off"/>
                     
                 
                     <div class="form-group">
                         <label for="formGroupExampleInput">Subject</label>
-                        <input type="text" class="form-control" value={subject} onChange={(e)=>setSubject(e.target.value)} id="formGrt" placeholder="Subject" />
+                        <input type="text" class="form-control" value={subject} onChange={(e)=>setSubject(e.target.value)} id="formGrt" placeholder="Subject" autoComplete="off"/>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Application</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value={message} onChange={(e)=>setMessage(e.target.value)}></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value={message} onChange={(e)=>setMessage(e.target.value)} autoComplete="off"></textarea>
                     </div>
                     </div>
                     <button class="btn btn-success"type="submit">Submit </button>
